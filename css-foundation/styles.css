@@ -55,7 +55,14 @@ div {
   width: 200px;
 }
 
-.exercise4 {
+.exercise {
   background-color: white;
   text-align: left;
+}
+
+.container p {
+  background-color: yellow;
+  color: red;
+  font-size: 20px;
+  text-align: center;
 }
