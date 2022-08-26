@@ -6,7 +6,23 @@ div {
   text-align: center;
 }
 
-button {
+#two {
+  background-color: white;
+  color: #0000ff;
+  font-size: 36px;
+  text-align: left;
+}
+
+#four {
+  background-color: lightgreen;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.buttonOne,
+.buttonTwo {
   font-size: 28px;
   font-family: Helvetica, "Times New Roman", sans-serif;
 }
@@ -22,24 +38,24 @@ button {
 
 .oddNumbered {
   background-color: rgb(255, 192, 203);
-  font-family: "Verdana, DejaVu sans, sans-serif";
+  font-family: Verdana, "DejaVu sans", sans-serif;
 }
 
 .oddNumbered.three {
   font-size: 24px;
 }
 
-#two {
-  background-color: white;
-  color: #0000ff;
-  font-size: 36px;
-  text-align: left;
+.avatar.proportioned {
+  height: auto;
+  width: 300px;
 }
 
-#four {
-  background-color: lightgreen;
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
+.avatar.distorted {
+  height: 400px;
+  width: 200px;
+}
+
+.exercise4 {
+  background-color: white;
   text-align: left;
 }
