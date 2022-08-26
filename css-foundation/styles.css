@@ -66,3 +66,34 @@ div {
   font-size: 20px;
   text-align: center;
 }
+
+.para {
+  font-weight: 900;
+}
+
+.small-para {
+  font-size: 12px;
+}
+
+.button {
+  border-width: 2px;
+}
+
+.confirm {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+.text-exercise-6 {
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 100;
+}
+
+.text-exercise-6.child {
+  font-size: 10px;
+  font-weight: 900;
+}
