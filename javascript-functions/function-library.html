@@ -20,15 +20,15 @@
     const input = document.querySelector('.numberInput');
     const para = document.querySelector('p');
 
-    function squared(num) {
+    function calcSquared(num) {
         return num * num;
     }
 
-    function cubed(num) {
+    function calcCubed(num) {
     return num * num * num;
     }
 
-    function factorial(num) {
+    function calcFactorial(num) {
         if (num < 0) return undefined;
         if (num === 0) return 1;
         let x = num - 1;
@@ -39,15 +39,15 @@
     return num;
     }
 
-    function squareRoot(num) {
+    function calcSquareRoot(num) {
         return Math.sqrt(num)
     }
 
-    function cubeRoot(num) {
+    function calcCubeRoot(num) {
         return Math.sqrt(Math.sqrt(num))
     }
 
-    function circumference(radius) {
+    function calcCircumference(radius) {
         return radius * Math.PI * 2
     }
 
@@ -56,12 +56,12 @@
         if (isNaN(num)) {
             para.textContent = 'You need to enter a number!';
         } else {
-            para.textContent = `${num} squared is ${squared(num)}. `;
-            para.textContent += `${num} cubed is ${cubed(num)}. `;
-            para.textContent += `${num} factorial is ${factorial(num)}. `;
-            para.textContent += `${num} square root is ${squareRoot(num)}. `;
-            para.textContent += `${num} cube root is ${cubeRoot(num)}. `;
-            para.textContent += `${num} would have ${circumference(num)} as circumference if it would be a circle. `;
+            para.textContent = `${num} squared is ${calcSquared(num)}. `;
+            para.textContent += `${num} cubed is ${calcCubed(num)}. `;
+            para.textContent += `${num} factorial is ${calcFactorial(num)}. `;
+            para.textContent += `${num} square root is ${calcSquareRoot(num)}. `;
+            para.textContent += `${num} cube root is ${calcCubeRoot(num)}. `;
+            para.textContent += `${num} would have ${calcCircumference(num)} as circumference if it would be a circle. `;
         }  
     });
 
