@@ -29,6 +29,10 @@ function startGame() {
                         checkValidity = true
                         updateDisplay()
                     } 
+                } else if (playerSelection === null){
+                    i += 100;
+                    resetGame()
+                    break;
                 }
             }
             if (playerWins == maxWins || computerWins == maxWins) {
