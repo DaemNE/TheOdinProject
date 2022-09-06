@@ -8,19 +8,20 @@
     <title>Rock-Paper-Scissor</title>
 </head>
 <body>
+    <div id="score">
+        <div id="playerScore">Playerscore = 0</div>
+        <div id="computerScore">Computerscore = 0</div>
+    </div>
+    <div id="outcome">Choose rock, paper or scissors!</div>
     <div class="center">
         <div>
-            <button id= "buttonSetToOne" onclick="setFirstToOne()">first to 1</button>
-            <button id= "buttonSetToThree" onclick="setFirstToThree()">first to 3</button>
-            <button id= "buttonSetToFive" onclick="setFirstToFive()">first to 5</button>
+            <button id= "playerChoiceRock" onclick="rock()">Rock</button>
+            <button id= "playerChoicePaper" onclick="paper()">Paper</button>
+            <button id= "playerChoiceScissor" onclick="scissor()">Scissor</button>
         </div>
         <div>
-            <button onclick="startGame()">Start game</button>
-            <button onclick="resetGame()">Reset Game</button>
+            <button onclick="resetGame()" class="reset">Reset Game</button>
         </div>
-        <div class="playerWins">The player won 0 times</div>
-        <div class="computerWins">The computer won 0 times</div>
-        <div class="outcome">Click Start game to start!!</div>
     </div>
     <script src="./script.js"></script>
 </body>
