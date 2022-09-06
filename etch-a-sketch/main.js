@@ -87,9 +87,18 @@ function setMethodOnClick() {
 function makeRows(resolution, method) {
     container.style.setProperty('--grid-rows', resolution);
     container.style.setProperty('--grid-cols', resolution);
+    let count = 0
     for (let i = 0; i < (resolution * resolution); i++) {
         let cell = document.createElement("div");
+        let luckyNumber = Math.floor(Math.random()*500);
         
+        if (luckyNumber === 1 && count < 1 ) {
+            
+            cell.textContent = "*"
+            cell.style.color = "white"
+            cell.style.fontSize = "x-large";
+            count++;
+        }
         cell.addEventListener(method, (e) => {
             
             if (color === "rainbow") {
