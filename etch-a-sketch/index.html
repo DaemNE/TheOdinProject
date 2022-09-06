@@ -10,14 +10,23 @@
 <body>
     <div id="container"></div>
     <div id="buttons">
-    <button onclick="clearCanvas()">Reset Canvas</button>
-    <button onclick="setYellow()" id="setYellowButton">Set Yellow</button>
-    <button onclick="setBlue()" id="setBlueButton">Set Blue</button>
-    <button onclick="setWhite()" id="setWhiteButton">Set White</button>
-    <button onclick="setResolution256()" id="set16x16">16 x 16</button>
-    <button onclick="setResolution1024()" id="set32x32">32 x 32</button>
-    <button onclick="setResolution4096()" id="set64x64">64 x 64</button>
+    <div>
+        <button onclick="clearCanvas()" >Reset</button>
+        <button onclick="setMethodHover()" id="onHoverButton">Set onHover</button>
+        <button onclick="setMethodOnClick()" id="onClickButton">Set onClick</button>
+    </div>
     
+    <div id= "colours">
+        <button onclick="setWhite()" id="setWhiteButton">White</button>
+        <button onclick="setYellow()" id="setYellowButton">Yellow</button>
+        <button onclick="setBlue()" id="setBlueButton">Blue</button>
+        <button onclick="setRainbow()" id="setRainbowButton">Rainbow</button>
+    </div>
+    <div>
+        <button onclick="setResolution256()" id="set16x16">16 x 16</button>
+        <button onclick="setResolution1024()" id="set32x32">32 x 32</button>
+        <button onclick="setResolution4096()" id="set64x64">64 x 64</button>
+    </div>
     </div>
     <script src="./main.js"></script>
 </body>
