@@ -12,6 +12,7 @@ body {
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
+  background-color: #bdbaba;
 }
 
 #container {
@@ -36,7 +37,6 @@ body {
 
 .grid-item {
   padding: 2px;
-  border: 2px solid black;
   margin: -1px;
   text-align: center;
 }

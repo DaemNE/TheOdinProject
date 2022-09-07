@@ -1,16 +1,16 @@
 const container = document.getElementById("container");
 let resolution = 16;
-let color = "white"
+let color = "yellow"
 let method = "mouseover";
 let background = "white";
-let luckyState = false;
-let luckyColor = "white"
 
-document.getElementById("setWhiteButton").style.backgroundColor = "green"
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
+document.getElementById("setYellowButton").style.backgroundColor = "green"
 document.getElementById("set16x16").style.backgroundColor = "green"
-document.getElementById("onHoverButton").style.backgroundColor = "green"
 document.getElementById("setCanvasWhite").style.backgroundColor = "green"
-document.getElementById("toggleLuckyButton").style.backgroundColor = "red"
 
 function setWhite() {
     color = "white"
@@ -74,24 +74,10 @@ function setResolution4096(){
     makeRows(resolution)
 }
 
-function setMethodHover() {
-    method = "mouseover"
-    updateGrid()
-    makeRows(resolution)
-    document.getElementById("onHoverButton").style.backgroundColor = "green"
-    document.getElementById("onClickButton").style.backgroundColor = "white"
-}
-function setMethodOnClick() {
-    method = "click"
-    updateGrid()
-    makeRows(resolution)
-    document.getElementById("onHoverButton").style.backgroundColor = "white"
-    document.getElementById("onClickButton").style.backgroundColor = "green"
-}
+
 
 function setCanvasWhite() {
     background = "white"
-    luckyColor = "white"
     updateGrid()
     makeRows(resolution)
     document.getElementById("setCanvasWhite").style.backgroundColor = "green"
@@ -101,7 +87,6 @@ function setCanvasWhite() {
 }
 function setCanvasBlack() {
     background = "black"
-    luckyColor = "black"
     updateGrid()
     makeRows(resolution)
     document.getElementById("setCanvasWhite").style.backgroundColor = "white"
@@ -112,7 +97,6 @@ function setCanvasBlack() {
 }
 function setCanvasRed() {
     background = "red"
-    luckyColor = "red"
     updateGrid()
     makeRows(resolution)
     document.getElementById("setCanvasWhite").style.backgroundColor = "white"
@@ -122,7 +106,6 @@ function setCanvasRed() {
 }
 function setCanvasBlue() {
     background = "blue"
-    luckyColor = "blue"
     updateGrid()
     makeRows(resolution)
     document.getElementById("setCanvasWhite").style.backgroundColor = "white"
@@ -131,96 +114,48 @@ function setCanvasBlue() {
     document.getElementById("setCanvasBlue").style.backgroundColor = "green"
 }
 
-function toggleLucky() {
-    if (luckyState) {
-        luckyState = false
-        document.getElementById("toggleLuckyButton").style.backgroundColor = "red"
-    } else {
-        luckyState = true
-        document.getElementById("toggleLuckyButton").style.backgroundColor = "green"
-    }
-    updateGrid()
-    makeRows(resolution)
-
-}
 
 function makeRows(resolution) {
+    
     container.style.setProperty('--grid-rows', resolution);
     container.style.setProperty('--grid-cols', resolution);
-    let count = 0
+
     for (let i = 0; i < (resolution * resolution); i++) {
-        let cell = document.createElement("div");
-        let luckyNumber = Math.floor(Math.random()*500);
-
-        if (resolution === 16) {
-            cell.style.fontSize = "x-large";
-        } else if (resolution === 32) {
-            cell.style.fontSize = "medium";
-        } else {
-            cell.style.fontSize = "xx-small";
-        }
-
-        cell.style.color = luckyColor
-        cell.style.backgroundColor = background;
-
-        if (luckyNumber === 1 && count < 1 && luckyState) {
-            console.log("X marked")
-            cell.textContent = "*"
-            document.getElementById("isLucky").innerText = "We've placed a gift"
-            count++;
-        }
-
-        if (background === "black") {
-            cell.style.borderColor = "white"
-        }
-        cell.addEventListener(method, (e) => {
-            
-            if (color === "rainbow") {
-                let randomNumber = Math.floor(Math.random()*7)+1
-
-                switch (randomNumber) {
-                    case 1: cell.style.backgroundColor = "red";
-                    break;
-                    case 2: cell.style.backgroundColor = "orange";
-                    break;
-                    case 3: cell.style.backgroundColor = "yellow";
-                    break;
-                    case 4: cell.style.backgroundColor = "green";
-                    break;
-                    case 5: cell.style.backgroundColor = "blue";
-                    break;
-                    case 6: cell.style.backgroundColor = "indigo";
-                    break;
-                    case 7: cell.style.backgroundColor = "violet";
-                    break;
-                }
-            }
-
-            if (background === "black" && color === "white") {
-                cell.style.borderColor = "black"
-            }
-            if (background === "white" && color === "black") {
-                cell.style.borderColor = "white"
-            }
-            cell.style.backgroundColor = color;
-        }
-        )
-        container.appendChild(cell).className = "grid-item"
-        
-    };
+        const cell = document.createElement('div')
+        cell.classList.add('grid-item')
+        cell.addEventListener('mouseover', changeColor)
+        cell.addEventListener('mousedown', changeColor)
+        cell.style.backgroundColor = background
+        container.appendChild(cell)
+      }
 };
 
+  
+  function changeColor(e) {
+    if (e.type === 'mouseover' && !mouseDown) return
+    if (color === 'rainbow') {
+      const randomNumberR = Math.floor(Math.random() * 256)
+      const randomNumberG = Math.floor(Math.random() * 256)
+      const randomNumberB = Math.floor(Math.random() * 256)
+      e.target.style.backgroundColor = `rgb(${randomNumberR}, ${randomNumberG}, ${randomNumberB})`
+    } else if (color === 'yellow') {
+      e.target.style.backgroundColor = "yellow"
+    } else if (color === 'white') {
+      e.target.style.backgroundColor = '#fefefe'
+    } else if (color === 'blue') {
+        e.target.style.backgroundColor = "blue"
+      }
+  }
+
 function updateGrid() {
-    let grid = document.getElementById("container")
-    for (let i = 0; i < resolution * resolution; i++) {
-        grid.removeChild(document.querySelector("#container .grid-item"))
-    }
+    let grid = document.getElementById("container").innerHTML= ""
+    
 }
 
 function clearCanvas() {
     let cells = document.querySelectorAll(".grid-item")
     for (let i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = "white"
+        cells[i].style.backgroundColor = background
     }
 }
 
