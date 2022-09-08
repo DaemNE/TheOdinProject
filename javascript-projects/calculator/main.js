@@ -4,8 +4,14 @@ const buttons = document.querySelectorAll(".btn")
 let operator;
 
 function updateDisplay() {
-    screenTop.textContent = screenBottom.textContent
+    if (screenBottom.textContent != 0) {
+        screenTop.textContent = Array.from(screenTop.textContent)
+                                            .splice(0, screenTop.textContent.length-1)
+                                            .join("")
+        screenTop.textContent = screenBottom.textContent
+    }
     screenBottom.textContent = "0"
+    document.getElementById("description").textContent = "Hi, this is my calculator"
 }
 
 function cleared() {
@@ -39,6 +45,11 @@ function equals() {
         case "/": divide();
         break;
     }
+    if (screenBottom.textContent == "Infinity" || screenBottom.textContent == "NaN") {
+        document.getElementById("description").textContent = "You can't divide by 0, silly!"
+        cleared()
+    }
+    operator = ""
 }
 
 function one() {
@@ -120,24 +131,67 @@ function dot() {
 }
 
 function setDivide() {
-    operator = "/"
-    updateDisplay()
-    screenTop.textContent += " /"
+    if (screenBottom.textContent != 0) {
+        equals()
+    }
+    if(operator == "") {
+        operator = "/"
+        updateDisplay()
+        screenTop.textContent += " /"
+    } else {
+        screenTop.textContent = Array.from(screenTop.textContent)
+                                            .splice(0, screenTop.textContent.length-1)
+                                            .join("");
+        operator = "/"
+        updateDisplay()
+        screenTop.textContent += " /"
+        
+    }
 }
 function setSum() {
-    operator = "+"
-    updateDisplay()
-    screenTop.textContent += " +"
+    if(operator == "") {
+        operator = "+"
+        updateDisplay()
+        screenTop.textContent += " +"
+    } else {
+        screenTop.textContent = Array.from(screenTop.textContent)
+                                            .splice(0, screenTop.textContent.length-1)
+                                            .join("");
+        operator = "+"
+        updateDisplay()
+        screenTop.textContent += " +"
+        
+    }
 }
 function setMultiply() {
-    operator = "*"
-    updateDisplay()
-    screenTop.textContent += " *"
+    if(operator == "") {
+        operator = "*"
+        updateDisplay()
+        screenTop.textContent += " *"
+    } else {
+        screenTop.textContent = Array.from(screenTop.textContent)
+                                            .splice(0, screenTop.textContent.length-1)
+                                            .join("");
+        operator = "*"
+        updateDisplay()
+        screenTop.textContent += " *"
+        
+    }
 }
 function setSubtract() {
-    operator = "-"
-    updateDisplay()
-    screenTop.textContent += " -"
+    if(operator == "") {
+        operator = "-"
+        updateDisplay()
+        screenTop.textContent += " -"
+    } else {
+        screenTop.textContent = Array.from(screenTop.textContent)
+                                            .splice(0, screenTop.textContent.length-1)
+                                            .join("");
+        operator = "-"
+        updateDisplay()
+        screenTop.textContent += " -"
+        
+    }
 }
 
 function sum() {
