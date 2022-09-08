@@ -1,8 +1,181 @@
 const screenTop = document.getElementById("screenTop")
 const screenBottom = document.getElementById("screenBottom")
+const buttons = document.querySelectorAll(".btn")
+let operator;
 
-screenTop.textContent = "hi"
-
-function add(a, b) {
-    return a + b;
+function updateDisplay() {
+    screenTop.textContent = screenBottom.textContent
+    screenBottom.textContent = "0"
 }
+
+function cleared() {
+    screenTop.textContent = "0"
+    screenBottom.textContent = "0"
+}
+
+function del() {
+    if(screenBottom.textContent != 0) {
+
+        if (screenBottom.textContent.length === 1) {
+            screenBottom.textContent = 0
+        } else {
+            screenBottom.textContent = Array.from(screenBottom.textContent)
+                                            .splice(0, screenBottom.textContent.length-1)
+                                            .join("")
+        }
+        
+    }
+    
+}
+
+function equals() {
+    switch (operator) {
+        case "+": sum();
+        break;
+        case "-": subtract();
+        break;
+        case "*": multiply();
+        break;
+        case "/": divide();
+        break;
+    }
+}
+
+function one() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "1"
+    } else {
+        screenBottom.textContent = 1
+    }
+}
+function two() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "2"
+    } else {
+        screenBottom.textContent = 2
+    }
+}
+function three() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "3"
+    } else {
+        screenBottom.textContent = 3
+    }
+}
+function four() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += 4
+    } else {
+        screenBottom.textContent = 4
+    }
+}
+function five() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "5"
+    } else {
+        screenBottom.textContent = 5
+    }
+}
+function six() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "6"
+    } else {
+        screenBottom.textContent = 6
+    }
+}
+function seven() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "7"
+    } else {
+        screenBottom.textContent = 7
+    }
+}
+function eight() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "8"
+    } else {
+        screenBottom.textContent = 8
+    }
+}
+function nine() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "9"
+    } else {
+        screenBottom.textContent = 9
+    }
+}
+function zero() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "0"
+    } else {
+        screenBottom.textContent = 0
+    }
+}
+function dot() {
+    if (screenBottom.textContent != 0){
+        screenBottom.textContent += "."
+    } else {
+        screenBottom.textContent = "."
+    }
+}
+
+function setDivide() {
+    operator = "/"
+    updateDisplay()
+    screenTop.textContent += " /"
+}
+function setSum() {
+    operator = "+"
+    updateDisplay()
+    screenTop.textContent += " +"
+}
+function setMultiply() {
+    operator = "*"
+    updateDisplay()
+    screenTop.textContent += " *"
+}
+function setSubtract() {
+    operator = "-"
+    updateDisplay()
+    screenTop.textContent += " -"
+}
+
+function sum() {
+    let firstNumber = Number(Array.from(screenTop.textContent)
+                           .splice(0, screenTop.textContent.length-1)
+                           .join(""))
+    let secondNumber = Number(screenBottom.textContent)
+    let result = firstNumber + secondNumber
+    screenTop.textContent = 0
+    screenBottom.textContent = result;
+};
+
+function multiply() {
+    let firstNumber = Number(Array.from(screenTop.textContent)
+                           .splice(0, screenTop.textContent.length-1)
+                           .join(""))
+    let secondNumber = Number(screenBottom.textContent)
+    let result = firstNumber * secondNumber
+    screenTop.textContent = 0
+    screenBottom.textContent = result;
+};
+
+function divide() {
+    let firstNumber = Number(Array.from(screenTop.textContent)
+                           .splice(0, screenTop.textContent.length-1)
+                           .join(""))
+    let secondNumber = Number(screenBottom.textContent)
+    let result = (firstNumber / secondNumber)
+    screenTop.textContent = 0
+    screenBottom.textContent = result;
+};
+
+function subtract() {
+    let firstNumber = Number(Array.from(screenTop.textContent)
+                           .splice(0, screenTop.textContent.length-1)
+                           .join(""))
+    let secondNumber = Number(screenBottom.textContent)
+    let result = (firstNumber - secondNumber)
+    screenTop.textContent = 0
+    screenBottom.textContent = result;
+};
