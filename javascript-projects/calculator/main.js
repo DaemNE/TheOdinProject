@@ -2,6 +2,7 @@ const screenTop = document.getElementById("screenTop")
 const screenBottom = document.getElementById("screenBottom")
 const buttons = document.querySelectorAll(".btn")
 let operator;
+let countDot = 0;
 
 function updateDisplay() {
     if (screenBottom.textContent != 0) {
@@ -126,11 +127,23 @@ function zero() {
         screenBottom.textContent = 0
     }
 }
+
+function checkForDot() {
+    let arr = Array.from(screenBottom.textContent)
+    countDot = 0
+    arr.forEach((letter) => {
+        if (letter == ".") {
+            countDot++
+        }
+    })
+}
 function dot() {
-    if (screenBottom.textContent != 0){
+    
+    checkForDot()
+    if (countDot == 0) {
         screenBottom.textContent += "."
     } else {
-        screenBottom.textContent = "."
+        document.getElementById("description").textContent = "You can't have more than one comma!"
     }
 }
 
