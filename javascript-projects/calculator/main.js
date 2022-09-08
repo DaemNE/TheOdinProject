@@ -10,8 +10,12 @@ function updateDisplay() {
                                             .join("")
         screenTop.textContent = screenBottom.textContent
     }
+
+    
     screenBottom.textContent = "0"
+
     document.getElementById("description").textContent = "Hi, this is my calculator"
+
 }
 
 function cleared() {
@@ -149,6 +153,9 @@ function setDivide() {
     }
 }
 function setSum() {
+    if (screenBottom.textContent != 0) {
+        equals()
+    }
     if(operator == "") {
         operator = "+"
         updateDisplay()
@@ -164,6 +171,9 @@ function setSum() {
     }
 }
 function setMultiply() {
+    if (screenBottom.textContent != 0) {
+        equals()
+    }
     if(operator == "") {
         operator = "*"
         updateDisplay()
@@ -179,6 +189,9 @@ function setMultiply() {
     }
 }
 function setSubtract() {
+    if (screenBottom.textContent != 0) {
+        equals()
+    }
     if(operator == "") {
         operator = "-"
         updateDisplay()
