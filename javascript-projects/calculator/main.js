@@ -58,72 +58,81 @@ function equals() {
 }
 
 function one() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "1"
     } else {
         screenBottom.textContent = 1
     }
 }
 function two() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "2"
     } else {
         screenBottom.textContent = 2
     }
 }
 function three() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "3"
     } else {
         screenBottom.textContent = 3
     }
 }
 function four() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += 4
     } else {
         screenBottom.textContent = 4
     }
 }
 function five() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "5"
     } else {
         screenBottom.textContent = 5
     }
 }
 function six() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "6"
     } else {
         screenBottom.textContent = 6
     }
 }
 function seven() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "7"
     } else {
         screenBottom.textContent = 7
     }
 }
 function eight() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "8"
     } else {
         screenBottom.textContent = 8
     }
 }
 function nine() {
-
-    
-        if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
-            screenBottom.textContent += "9"
-        } else {
-            screenBottom.textContent = 9
-        }
+    checkForDot()
+    if (screenBottom.textContent != 0 || countDot > 0){
+        screenBottom.textContent += "9"
+    } else {
+        screenBottom.textContent = 9
+    }
 }
 function zero() {
-    if (screenBottom.textContent != 0 || Array.from(screenBottom.textContent)[screenBottom.textContent.length - 1] == "."){
+    checkForDot()
+    console.log(countDot)
+    if (screenBottom.textContent != 0 || countDot > 0){
         screenBottom.textContent += "0"
     } else {
         screenBottom.textContent = 0
