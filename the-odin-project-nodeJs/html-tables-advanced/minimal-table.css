@@ -43,3 +43,15 @@ tbody {
 tfoot {
   font-weight: bold;
 }
+
+#Purchase {
+  color: red;
+}
+
+#nested {
+  background-color: bisque;
+}
+
+.table1 {
+  background: blue;
+}
