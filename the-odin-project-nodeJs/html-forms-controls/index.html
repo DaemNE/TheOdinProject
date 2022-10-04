@@ -56,6 +56,44 @@
           </li>
         </ul>
       </form>
+      <form action="">
+        <ul>
+            <li>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+                
+            </li>
+            <li>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="hisSuggestion" />
+                
+            </li>
+            <li>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+                <datalist id="mySuggestion">
+                  <option>Apple</option>
+                  <option>Banana</option>
+                  <option>Blackberry</option>
+                  <option>Blueberry</option>
+                  <option>Lemon</option>
+                  <option>Lychee</option>
+                  <option>Peach</option>
+                  <option>Pear</option>
+                </datalist>
+                <datalist id="hisSuggestion">
+                  <option>Apple</option>
+                  <option>Mango</option>
+                  <option>Blackberry</option>
+                  <option>Avocado</option>
+                  <option>Lemon</option>
+                  <option>Lychee</option>
+                  <option>Peach</option>
+                  <option>Pear</option>
+                </datalist>
+            </li>
+        </ul>
+      </form>
       <script>
         const maxInvite = document.querySelector("#max-invite");
         const output = document.querySelector(".max-invite");
