@@ -49,6 +49,30 @@
 <input type="submit" value="This is a submit button" />
 
 <input type="image" alt="Click me!" src="my-img.png" width="80" height="30" />
+<input type="number" name="age" id="age" min="1" max="10" step="2" />
+<input type="number" name="change" id="pennies" min="0" max="1" step="0.01" />
+<label for="price">Choose a maximum house price: </label>
+<input
+  type="range"
+  name="phone_number"
+  id="phone_number"
+  min="0"
+  max="9999999999"
+  step="1"
+  value="767292040" />
+<output class="phone_number" for="phone_number"></output>
+<input type="time" name="time" id="time" />
+<input type="week" name="week" id="week" />
     </form>
+    <script>
+        const phoneNumber = document.querySelector("#phone_number");
+const output = document.querySelector(".phone_number");
+
+output.textContent = phoneNumber.value;
+
+phoneNumber.addEventListener("input", () => {
+  output.textContent = phoneNumber.value;
+});
+    </script>
 </body>
 </html>
