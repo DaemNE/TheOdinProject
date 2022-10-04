@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Information</legend>
+            <ul>
+                <li>
+                    <label for="email">Your email:</label>
+                    <input type="email" id="email" name="email">
+                </li>
+                <li>
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website">
+                </li>
+                <li>
+                    <label for="number">Your phone number</label>
+                    <input type="number" id="number" name="number">
+                </li>
+                <li>
+                    <label for="color">Your favourite colour:</label>
+                    <input type="color" id="color" name="color">
+                </li>
+                <li>
+                    <button type="submit">
+                        update preferences
+                    </button>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <form>
+        <ul>
+          <li>
+            <label for="max-invite">Select maximum number of invitations:</label>
+            <output class="max-invite" for="max-invite"> </output>
+            <input type="range" id="max-invite" value="0" max="10">
+            
+          </li>
+          <li>
+            <button type="submit">Submit</button>
+          </li>
+        </ul>
+      </form>
+      <script>
+        const maxInvite = document.querySelector("#max-invite");
+        const output = document.querySelector(".max-invite");
+
+        output.textContent = maxInvite.value;
+
+        maxInvite.addEventListener("input", () => {
+        output.textContent = maxInvite.value;
+        });
+    </script>
+</body>
+</html>
