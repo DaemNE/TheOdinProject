@@ -5,11 +5,10 @@
 
 .container {
   display: grid;
-  grid-template-columns: 50px 50px;
-  grid-template-rows: 50px 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 33vh);
   grid-auto-rows: 50px;
   grid-auto-columns: 50px;
-  grid-auto-flow: column;
   overflow: scroll;
   row-gap: 10px;
   column-gap: 5px;
@@ -17,6 +16,12 @@
 
 .center {
   overflow: scroll;
-  background-color: olive;
+  background-color: pink;
   border: 1px solid black;
+}
+
+.middle {
+  background-color: orange;
+  background-image: url(./duck.jpeg);
+  background-position: 0px;
 }
