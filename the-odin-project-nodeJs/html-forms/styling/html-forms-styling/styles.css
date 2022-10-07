@@ -1,0 +1,6 @@
+input:focus {
+  background-color: aliceblue;
+}
+input:placeholder-shown {
+  background-color: aqua;
+}
