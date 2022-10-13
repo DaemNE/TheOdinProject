@@ -265,3 +265,11 @@ svg {
 svg:hover {
   color: black;
 }
+
+.trending-item > svg {
+  color: black;
+}
+
+.trending-item > svg:hover {
+  color: rgb(14, 202, 14);
+}
