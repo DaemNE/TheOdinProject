@@ -52,11 +52,17 @@ html {
   padding-left: 2vw;
 }
 
+form {
+  display: flex;
+  gap: 0.5vw;
+}
+
 form > input {
   width: 95%;
   height: 2.2vh;
   border: none;
   border-radius: 10px;
+  background-color: #d4d6dd;
 }
 
 form > img {
@@ -250,4 +256,12 @@ form > img {
 
 hr {
   color: #d4d6dd;
+}
+
+svg {
+  color: white;
+}
+
+svg:hover {
+  color: black;
 }
