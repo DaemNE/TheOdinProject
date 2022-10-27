@@ -6,7 +6,8 @@ var Game = (() => {
     const gameBoard = document.querySelector(".gameBoard");
     let playerOne = "Player One"
     let playerTwo = "Player Two"
-    let currentPlayer = turn
+    let currentPlayer = turn;
+    let unbeatableBot = false;
 
     const render = (gameValues) => {
         for (i in gameValues) {
@@ -168,10 +169,27 @@ var Game = (() => {
     }
 
     const reset = () => {
-        let winner = turn == playerOne ? playerTwo : playerOne
+        let winner = turn == playerOne ? playerTwo : playerOne || turn
         document.getElementById("overlay").classList = "displayOff block"
         document.querySelector(".endGameText").textContent = `Player "${winner}" Has won! Play again?`
     };
+
+    const makeComputerMove = () => {
+        unbeatableBot = document.getElementById("toughness").checked
+        let availableCells = []
+        for (i in gameValues) {
+            if (gameValues[i] == "") {
+                availableCells.push(i)
+            }
+        }
+        if (unbeatableBot) {
+            console.log("This has to be implemented")
+        } else {
+            let randomCell = Math.floor(Math.random() * availableCells.length)
+            gameValues[availableCells[randomCell]] = turn;
+            update()
+        }
+    }
 
     const one = () => {
         if (checkValidity(0)) {
@@ -245,6 +263,7 @@ var Game = (() => {
         nine,
         resetScore,
         submitNames,
+        makeComputerMove,
     };
 
 })();
