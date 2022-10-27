@@ -58,6 +58,7 @@ var Game = (() => {
     };
 
     const checkForWin = () => {
+        let winner = null
         let horizontalTop = [gameValues[0], gameValues[1], gameValues[2]];
         let horizontalMiddle = [gameValues[3], gameValues[4], gameValues[5]];
         let horizontalBottom = [gameValues[6], gameValues[7], gameValues[8]];
@@ -71,8 +72,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -81,8 +84,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -91,8 +96,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -101,8 +108,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -111,8 +120,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -121,8 +132,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -131,8 +144,11 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
+
             };
             reset()
         };
@@ -141,8 +157,10 @@ var Game = (() => {
 
             if (turn == "O") {
                 scoreX++;
+                winner = "X"
             } else {
                 scoreO++;
+                winner = "O"
             };
             reset()
         };
@@ -190,7 +208,8 @@ var Game = (() => {
         }
         if (unbeatableBot) {
 
-            // needs implementation
+
+            unbeatableGimmick()
 
         } else {
             let randomCell = Math.floor(Math.random() * availableCells.length)
@@ -199,7 +218,21 @@ var Game = (() => {
         }
     }
 
-
+    const unbeatableGimmick = () => {
+        giveUp = confirm("Do you want to give up?")
+        if (giveUp) {
+            gameValues = [turn, turn, turn, turn, turn, turn, turn, turn, turn, ]
+            update()
+        } else {
+            confirmation = confirm("Are you sure?")
+            if (confirmation) {
+                unbeatableGimmick()
+            } else {
+                gameValues = [turn, turn, turn, turn, turn, turn, turn, turn, turn, ]
+                update()
+            }
+        }
+    }
 
 
     const one = () => {
