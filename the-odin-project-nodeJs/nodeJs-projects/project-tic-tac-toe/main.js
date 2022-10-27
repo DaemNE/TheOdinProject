@@ -4,9 +4,11 @@ var Game = (() => {
     let gameValues = ["", "", "", "", "", "", "", "", ""];
     let turn
     const gameBoard = document.querySelector(".gameBoard");
+    let playerOne = "Player One"
+    let playerTwo = "Player Two"
+    let currentPlayer = turn
 
     const render = (gameValues) => {
-        let allCells = document.querySelectorAll("cell")
         for (i in gameValues) {
             let cell = document.getElementById(`${i}`).textContent = gameValues[i];
         };
@@ -15,11 +17,21 @@ var Game = (() => {
     const pickStarter = () => {
         let headsOrTails = Math.floor(Math.random() * 2)
         if (headsOrTails == 1) {
-            turn = "X"
+            turn = playerOne
         } else {
-            turn = "O"
+            turn = playerTwo
         };
     };
+
+    const submitNames = () => {
+        playerOne = document.getElementById("playerOne").value
+        playerTwo = document.getElementById("playerTwo").value
+        document.getElementById("playerOne").value = ""
+        document.getElementById("playerTwo").value = ""
+        update()
+        console.log("Submitted names")
+    }
+
 
     const checkValidity = (id) => {
         if (!document.getElementById(id).textContent) {
@@ -32,8 +44,10 @@ var Game = (() => {
     const updateTurn = () => {
         if (turn === "X") {
             turn = "O";
+            currentPlayer = playerOne
         } else {
             turn = "X"
+            currentPlayer = playerTwo
         };
     };
 
@@ -130,7 +144,7 @@ var Game = (() => {
     };
 
     const updateScore = () => {
-        document.querySelector(".scoreBoard").textContent = `It is ${turn}'s turn. The current score: X=${scoreX} O=${scoreO}`;
+        document.querySelector(".scoreBoard").textContent = `It is ${currentPlayer}'s turn playing ${turn}. The current score: X=${scoreX} O=${scoreO}`;
     }
 
     const update = () => {
@@ -154,7 +168,7 @@ var Game = (() => {
     }
 
     const reset = () => {
-        let winner = turn == "X" ? "O" : "X"
+        let winner = turn == playerOne ? playerTwo : playerOne
         document.getElementById("overlay").classList = "displayOff block"
         document.querySelector(".endGameText").textContent = `Player "${winner}" Has won! Play again?`
     };
@@ -230,6 +244,7 @@ var Game = (() => {
         eigth,
         nine,
         resetScore,
+        submitNames,
     };
 
 })();
