@@ -206,7 +206,20 @@ export default function generateFoods() {
     }
 
     placeOrderButton.textContent = "Place order now!"
-    placeOrderButton.addEventListener("click", () => { alert(`Thanks for ordering! Your food is being processed`) })
+    placeOrderButton.addEventListener("click", () => {
+        console.log(orderedFoods)
+        if (orderedFoods.length > 0) {
+            let prompt = confirm("do you want to order?")
+
+            if (prompt) {
+                alert("Thanks for ordering, we are preparing your meal!")
+                orderedFoods = []
+                renderList()
+            }
+        } else {
+            alert("there is nothing in your cart")
+        }
+    })
     placeOrderButton.classList = "orderBtn"
 
     listContainer.appendChild(placeOrderButton)
