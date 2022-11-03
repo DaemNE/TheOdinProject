@@ -15,12 +15,16 @@ export default function pageLoad() {
     const orderListBtn = document.createElement("button")
     orderListBtn.classList = "orderListBtn"
     orderListBtn.textContent = "Order now!"
-    orderListBtn.addEventListener("click", function() { alert("order has been placed!") })
+    const removeListBtn = document.createElement("button")
+    removeListBtn.classList = "removeListBtn"
+    removeListBtn.textContent = "Clear Cart"
     const orderListHeader = document.createElement("div")
     orderListHeader.textContent = "Shopping cart"
     orderListHeader.classList = "orderListHeader"
     const orderedItemsList = document.createElement("div")
     orderedItemsList.classList = "orderedItemsList"
+    const totalAmount = document.createElement("div")
+    totalAmount.classList = "totalAmount"
 
 
     aboutHeader.textContent = "About"
@@ -49,6 +53,8 @@ export default function pageLoad() {
     orderList.appendChild(orderListHeader)
     orderList.appendChild(orderedItemsList)
     orderList.appendChild(orderListBtn)
+    orderList.appendChild(removeListBtn)
+    orderList.appendChild(totalAmount)
 
     if (!document.querySelector(".contactHeader")) { content.appendChild(header) }
 
@@ -59,3 +65,7 @@ export default function pageLoad() {
 
 
 }
+export let orderedFoods = []
+export let saladAmount = 0;
+export let spaghettiAmount = 0;
+export let lasagnaAmount = 0;

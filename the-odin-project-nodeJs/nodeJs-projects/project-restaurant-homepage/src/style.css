@@ -166,27 +166,54 @@ textarea {
     text-decoration: underline;
     padding-top: 1vh;
     font-size: 2vw;
-}
-
-.foodDiv {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    font-weight: bold;
+    padding-bottom: 1vh;
 }
 
 .orderListBtn {
     position: fixed;
+    top: 38vh;
+}
+
+.orderListBtn:hover {
+    background-color: lightgreen;
+}
+
+.removeListBtn {
+    position: fixed;
     top: 40vh;
 }
 
-.orderedItemsList>div:first-of-type {
-    font-size: 1.4em;
-    text-decoration: underline;
+.removeListBtn:hover {
+    background-color: rgba(238, 70, 3, 0.925);
+}
+
+.orderedItemsList>div {
+    width: 18vh;
     display: flex;
-    gap: 2vw;
+    justify-content: space-around;
 }
 
 .buttonDiv {
     display: flex;
     gap: 1vw;
+}
+
+.totalAmount {
+    height: 2vw;
+    width: auto;
+    position: fixed;
+    top: 42vh;
+}
+
+.totalAmount::before {
+    content: "total: €"
+}
+
+.priceDiv::before {
+    content: "€";
+}
+
+.priceDiv>div:first-of-type::before {
+    content: " ";
 }
