@@ -6,15 +6,17 @@ export default function generateFoods() {
     const content = document.querySelector(".content")
     const placeOrderButton = document.createElement("button")
     const orderList = document.querySelector(".orderList")
-    const orderedItemsList = document.createElement("div")
+    const orderedItemsList = document.querySelector(".orderedItemsList")
     orderedItemsList.classList = "orderedItemsList"
-    orderList.appendChild(orderedItemsList)
 
-    let orderedFoods = [{
-        name: "ITEM",
-        price: "PRICE"
-    }]
+    let orderedFoods;
 
+    if (!orderedFoods) {
+        orderedFoods = [{
+            name: "ITEM",
+            price: "PRICE"
+        }]
+    }
 
     let listOfFoods = [{
         name: 'salad',

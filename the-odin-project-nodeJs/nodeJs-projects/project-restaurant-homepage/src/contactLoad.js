@@ -14,6 +14,7 @@ export default function generateContact() {
     const commentLabel = document.createElement("label")
     const contactImg = document.createElement("img")
     const buttonDiv = document.createElement("div")
+    buttonDiv.classList = "buttonDiv"
     const submitButton = document.createElement("button")
     const resetButton = document.createElement("button")
 

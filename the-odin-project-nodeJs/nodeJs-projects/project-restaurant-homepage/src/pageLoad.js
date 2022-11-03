@@ -19,6 +19,8 @@ export default function pageLoad() {
     const orderListHeader = document.createElement("div")
     orderListHeader.textContent = "Shopping cart"
     orderListHeader.classList = "orderListHeader"
+    const orderedItemsList = document.createElement("div")
+    orderedItemsList.classList = "orderedItemsList"
 
 
     aboutHeader.textContent = "About"
@@ -45,6 +47,7 @@ export default function pageLoad() {
     description.appendChild(descText)
 
     orderList.appendChild(orderListHeader)
+    orderList.appendChild(orderedItemsList)
     orderList.appendChild(orderListBtn)
 
     if (!document.querySelector(".contactHeader")) { content.appendChild(header) }

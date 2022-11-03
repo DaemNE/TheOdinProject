@@ -30,6 +30,11 @@ ul {
 
 .list {
     position: relative;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }
 
 li {
@@ -137,6 +142,7 @@ textarea {
     width: 100%;
     height: 5vh;
     margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 .orderBtn:hover {
@@ -165,10 +171,22 @@ textarea {
 .foodDiv {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .orderListBtn {
     position: fixed;
     top: 40vh;
+}
+
+.orderedItemsList>div:first-of-type {
+    font-size: 1.4em;
+    text-decoration: underline;
+    display: flex;
+    gap: 2vw;
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 1vw;
 }
