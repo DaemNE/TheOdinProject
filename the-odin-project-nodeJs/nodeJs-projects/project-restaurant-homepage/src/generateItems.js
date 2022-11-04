@@ -227,6 +227,4 @@ export default function generateFoods() {
     content.appendChild(listContainer)
     content.appendChild(footer)
 
-
-
 }
