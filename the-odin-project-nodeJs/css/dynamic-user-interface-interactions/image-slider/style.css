@@ -1,0 +1,259 @@
+img {
+    height: 450px;
+    width: 300px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slider-container {
+    height: 500px;
+    width: 100%;
+    background-color: gainsboro;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    position: relative;
+}
+
+.front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right {
+    position: absolute;
+    transform: translateX(350px) scale(0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.farRight {
+    position: absolute;
+    transform: translateX(600px) scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left {
+    position: absolute;
+    transform: translateX(-350px) scale(0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.farLeft {
+    position: absolute;
+    transform: translateX(-600px) scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    background-color: grey;
+    border: 1px solid black;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.frontToLeft {
+    animation: animFrontToLeft .5s ease-in-out;
+}
+
+.leftToFarLeft {
+    animation: animLeftToFarLeft .5s ease-in-out;
+}
+
+.farLeftToFarRight {
+    animation: animFarLeftToFarRight .5s ease-in-out;
+}
+
+.farRightToRight {
+    animation: animFarRightToRight .5s ease-in-out;
+}
+
+.rightToFront {
+    animation: animRightToFront .5s ease-in-out;
+}
+
+.frontToRight {
+    animation: animFrontToRight .5s ease-in-out;
+}
+
+.rightToFarRight {
+    animation: animRightToFarRight .5s ease-in-out;
+}
+
+.farRightToFarLeft {
+    animation: animFarRightToFarLeft .5s ease-in-out;
+}
+
+.farLeftToLeft {
+    animation: animFarLeftToLeft .5s ease-in-out;
+}
+
+.leftToFront {
+    animation: animLeftToFront .5s ease-in-out;
+}
+
+@keyframes animFrontToLeft {
+    0% {
+        transform: translateX(0px) scale(1);
+    }
+    50% {
+        transform: translateX(-375px) scale(.7);
+    }
+    100% {
+        transform: translateX(-350px) scale(.7);
+    }
+}
+
+@keyframes animLeftToFarLeft {
+    0% {
+        transform: translateX(-350px) scale(.7);
+    }
+    50% {
+        transform: translateX(-625px) scale(.5);
+    }
+    100% {
+        transform: translateX(-600px) scale(.5);
+    }
+}
+
+@keyframes animFarLeftToFarRight {
+    0% {
+        transform: translateX(-600px) scale(.5);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(625px) scale(.5);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(600px) scale(.5);
+    }
+}
+
+@keyframes animFarRightToRight {
+    0% {
+        transform: translateX(600px) scale(0.5);
+    }
+    50% {
+        transform: translateX(325px) scale(.7);
+    }
+    100% {
+        transform: translateX(350px) scale(.7);
+    }
+}
+
+@keyframes animRightToFront {
+    0% {
+        transform: translateX(350px) scale(.7);
+    }
+    50% {
+        transform: translateX(-25px) scale(1);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes animFrontToRight {
+    0% {
+        transform: translateX(0px) scale(1);
+    }
+    50% {
+        transform: translateX(375px) scale(.7);
+    }
+    100% {
+        transform: translateX(350px) scale(.7);
+    }
+}
+
+@keyframes animRightToFarRight {
+    0% {
+        transform: translateX(350px) scale(0.7);
+    }
+    50% {
+        transform: translateX(625px) scale(0.5);
+    }
+    100% {
+        transform: translateX(600px) scale(0.5);
+    }
+}
+
+@keyframes animFarRightToFarLeft {
+    0% {
+        transform: translateX(600px) scale(.5);
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-625px) scale(.5);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-600px) scale(.5);
+    }
+}
+
+@keyframes animFarLeftToLeft {
+    0% {
+        transform: translateX(-600px) scale(.5);
+    }
+    50% {
+        transform: translateX(-325px) scale(.7);
+    }
+    100% {
+        transform: translateX(-350px) scale(.7);
+    }
+}
+
+@keyframes animLeftToFront {
+    0% {
+        transform: translateX(-300px) scale(.7);
+    }
+    50% {
+        transform: translateX(25px) scale(1);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
