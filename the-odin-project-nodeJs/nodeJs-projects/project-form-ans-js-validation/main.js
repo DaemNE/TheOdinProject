@@ -28,8 +28,6 @@ const passwordError = document.querySelector("#password + span.error")
 const confirmPassword = document.getElementById("confirm_pasword")
 const confirmPasswordError = document.querySelector("#confirm_password + span.error")
 
-
-
 email.addEventListener("input", (event) => {
 
     if (email.validity.valid) {
