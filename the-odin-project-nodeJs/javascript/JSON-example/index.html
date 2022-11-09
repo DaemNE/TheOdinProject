@@ -29,7 +29,6 @@
             const response = await fetch(request);
             const superHeroesText = await response.text();
 
-
             const superHeroes = JSON.parse(superHeroesText);
 
             populateHeader(superHeroes);
