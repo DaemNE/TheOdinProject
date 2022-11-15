@@ -71,9 +71,9 @@
             const list = document.createElement("ul")
             list.classList = "list"
             container.appendChild(list)
-            for (value in itemList) {
+            for (let value of itemList) {
                 const item = document.createElement("li")
-                item.textContent = itemList[value]
+                item.textContent = value
                 list.appendChild(item)
             }
         }
