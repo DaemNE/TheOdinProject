@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            height: 100vh;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 24px;
+        }
+        
+        li {
+            list-style: none;
+            width: 20vw;
+            margin-bottom: 1vh;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" name="" id="input">
+        <button onclick="addItem()">Add item to list</button>
+        <ul class="list"></ul>
+    </div>
+    <script>
+        if (!localStorage.getItem("itemList")) {
+            let itemList = [];
+            let count = 0;
+            console.log(itemList)
+            localStorage.setItem("count", count)
+            localStorage.setItem("itemList", JSON.stringify(itemList))
+        }
+
+        console.log(localStorage.getItem("itemList"))
+        console.log(localStorage.getItem("count"))
+
+        function addItem() {
+            let itemList = JSON.parse(localStorage.getItem("itemList"))
+            let count = localStorage.getItem("count")
+            console.log(count)
+            const input = document.getElementById("input")
+            itemList.push(input.value)
+            input.value = ""
+            count++
+            localStorage.setItem("count", count)
+            localStorage.setItem("itemList", JSON.stringify(itemList))
+            renderList()
+        }
+
+        function renderList() {
+            let itemList = JSON.parse(localStorage.getItem("itemList"))
+            console.log(itemList)
+            const removeList = document.querySelector(".list")
+            const container = document.querySelector(".container")
+            container.removeChild(removeList)
+            const list = document.createElement("ul")
+            list.classList = "list"
+            container.appendChild(list)
+            for (value in itemList) {
+                const item = document.createElement("li")
+                item.textContent = itemList[value]
+                list.appendChild(item)
+            }
+        }
+
+        renderList()
+    </script>
+</body>
+
+</html>
