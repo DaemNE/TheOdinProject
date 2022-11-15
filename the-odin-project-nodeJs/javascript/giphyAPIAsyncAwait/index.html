@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" name="lookup" id="lookup">
+        <label for="lookup">search for gif</label>
+        <div><button onclick='lookup()'>Click me</button></div>
+        <div><img src="" alt="img" id="img"></div>
+    </div>
+    <script>
+        const apiKey = "iazeufgqsbveirhg235sdrf" //fake APIKEY
+        const input = document.getElementById("lookup")
+        const img = document.getElementById('img')
+
+        async function lookup() {
+            try {
+                let value = input.value
+                input.value = ""
+                const apiUrl = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${value}`
+                const response = await fetch(apiUrl)
+                    .catch(() => {
+                        img.src = "./oops.webp"
+                    })
+                const catData = await response.json()
+                    .catch(() => {
+                        img.src = "./oops.webp"
+                    })
+
+                img.src = catData.data.images.original.url;
+            } catch (error) {
+                // testing how to catch invalid APIKEY
+                img.src = "./oops.webp"
+            }
+        }
+    </script>
+</body>
+
+</html>
