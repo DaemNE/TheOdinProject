@@ -1,0 +1,19 @@
+{
+    "name": "project-weather-app",
+    "version": "1.0.0",
+    "description": "Weather app using openweathermap API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "start": "webpack serve --open",
+        "server": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0"
+    }
+}
