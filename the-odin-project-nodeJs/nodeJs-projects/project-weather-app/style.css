@@ -15,20 +15,21 @@ body {
 .locationInfo {
     background-color: transparent;
     height: 97vh;
-    width: max(25vw, 200px);
+    width: max(40vw, 250px);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     text-align: center;
     padding-left: 2vh;
     padding-top: 2vh;
+    gap: 5vh;
 }
 
 .detailed-weatherInfo {
     background-color: transparent;
     height: 97vh;
-    width: max(25vw, 200px);
+    width: max(40vw, 250px);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -65,6 +66,7 @@ body {
     justify-content: space-around;
     align-items: center;
     text-shadow: none;
+    font-size: min(3vw, 1rem);
 }
 
 .icon {
@@ -90,17 +92,17 @@ body {
 }
 
 .weather-info-description {
-    font-size: 2em;
+    font-size: min(8vw, 2em);
     text-align: right;
 }
 
 .weather-info-city {
-    font-size: 1em;
+    font-size: min(4vw, 1em);
     text-align: right;
 }
 
 .weather-info-temperature {
-    font-size: 4em;
+    font-size: min(8vw, 4em);
     text-align: right;
 }
 
@@ -130,7 +132,7 @@ input[type=text]::placeholder {
 
 .weather-info-unit {
     display: flex;
-    font-size: 2em;
+    font-size: min(2vh, 2em);
     width: max(25vw, 200px);
     gap: 1vw;
     justify-content: left;
@@ -138,7 +140,7 @@ input[type=text]::placeholder {
 }
 
 .weather-info-title {
-    font-size: 0.5em;
+    font-size: min(2vh, 0.5em);
 }
 
 .card-container {
@@ -206,4 +208,9 @@ button:hover {
 .fix-padding {
     width: max(25vw, 200px);
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: end;
+    align-items: flex-end;
 }
