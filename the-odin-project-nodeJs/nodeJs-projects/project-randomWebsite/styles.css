@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+nav {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+}
+
+.container {
+    height: 100vh;
+    background-color: yellow;
+}
+
+.logo {
+    height: 10vh;
+    width: 10vh;
+    background-color: white;
+    border-radius: 3rem;
+}
+
+.nav-container {
+    display: flex;
+    height: 5vh;
+    width: 40vw;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkgrey;
+}
+
+.nav-container>div {
+    height: 100%;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container>div:hover {
+    background-color: black;
+    color: white;
+}
+
+.icon {
+    height: 5vh;
+    background-color: white;
+    width: 5vh;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body {
+    height: 85vh;
+    background-color: aqua;
+    overflow: scroll;
+}
+
+.footer {
+    height: 5vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.duck-container {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.duck {
+    height: 40vh;
+    width: 25vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.duck-title {
+    height: 5vh;
+    background-color: aliceblue;
+    width: 10vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.duck-title::before {
+    content: "Title";
+}
+
+.duck-img {
+    background: white;
+    height: 20vh;
+    width: 20vh;
+    image-orientation: flip;
+}
+
+.more-info-btn {
+    height: 5vh;
+    width: 10vw;
+    background-color: rgb(154, 205, 50, 0.6);
+}
+
+.more-info-btn::before {
+    content: "More Info"
+}
+
+.more-info-btn:hover {
+    background-color: rgb(154, 205, 50, 1);
+    cursor: pointer;
+}
+
+.buy-btn {
+    height: 5vh;
+    width: 10vw;
+    background-color: rgb(144, 238, 144, 0.8);
+}
+
+.buy-btn::before {
+    content: "Buy"
+}
+
+.buy-btn:hover {
+    background-color: rgb(144, 238, 144, 1);
+    cursor: pointer;
+}
+
+.duck-desc {
+    font-size: 1em;
+}
+
+.duck-desc::before {
+    content: "lorem ipsum about a duck";
+}
