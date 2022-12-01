@@ -22,6 +22,7 @@ export class Home extends React.Component {
         })
     }
 
+
     onMakeYounger() {
         this.setState({
             age: this.state.age - 3
