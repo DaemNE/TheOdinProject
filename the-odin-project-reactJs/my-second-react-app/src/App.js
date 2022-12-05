@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import './App.css';
 import './appStyles.css'
-import Form from './components/Form';
+import ParentComp from './components/ParentComp';
+
 
 
 class App extends Component{
   render () {
     return (
       <div className="App">
-
-        <Form></Form>
-        
-        
+        <ParentComp></ParentComp>
       </div>
     );
   }
