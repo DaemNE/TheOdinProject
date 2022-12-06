@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.css';
 import './appStyles.css'
-import ParentComp from './components/ParentComp';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 
 
 
@@ -9,7 +10,8 @@ class App extends Component{
   render () {
     return (
       <div className="App">
-        <ParentComp></ParentComp>
+        <ClickCounter name={"Vishwas"}></ClickCounter>
+        <HoverCounter></HoverCounter>
       </div>
     );
   }
