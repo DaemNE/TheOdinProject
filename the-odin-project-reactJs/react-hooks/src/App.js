@@ -1,10 +1,12 @@
 import './App.css';
-import HookCounterThree from './components/HookCounterThree';
+import IntervalClassCounter from './components/IntervalClassCounter';
+import IntervalHookCounter from './components/IntervalHookCounter';
 
 function App() {
   return (
     <div className="App">
-      <HookCounterThree />
+      <IntervalClassCounter />
+      <IntervalHookCounter />
     </div>
   );
 }
