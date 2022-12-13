@@ -2,18 +2,17 @@ import React from 'react'
 
 function Skills({skills}) {
 
-  const listItems = skills.map((skill) => {
+  const listItems = skills.map((skill, id) => {
     return (
-      <li key={skill}>
-      <div className='skill-item'>{skill}</div>
-      <button className='remove-list-item' onClick={() => "remove item"}>X</button>
+      <li key={id}>
+      {skill}
       </li>
     )
   })
   return (
-    <div className='cv-skills'>
-        <div className='skills-header'>Skills</div>
-        {listItems}
+    <div className='preview-component'>
+        <div className='cv-display-title'>Skills</div>
+        <ul>{listItems}</ul>
     </div>
   )
 }

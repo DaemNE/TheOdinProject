@@ -2,19 +2,28 @@ import React, {useState} from 'react'
 
 function CreateSkills({setSkills, skills}) {
 
-  const [value, setValue] = useState("");
+  const [skillInput, setSkillInput] = useState("");
 
   return (
-    <div>
+    <div className='create-skills'>
       <div className='create-title'>Skills</div>
-      <input type="text" placeholder='React.js' value={value} onChange={(e) => setValue(e.target.value)}/>
+      <div className="create-skill-input">
+        <input className='create-skill-input' type="text" placeholder='React.js' value={skillInput} onKeyDownCapture={(e) => {
+          console.log(e)
+          if (e.key === "Enter") {
+            setSkillInput("")
+            setSkills(() => 
+            [...skills, skillInput]
+        )
+          }
+        }} onChange={(e) => setSkillInput(e.target.value)}/>
+      </div>
       <div className='button-group'>
         <button className='button-add' onClick={() => {
+        setSkillInput("")
         setSkills(() => 
-          [...skills, value]
+          [...skills, skillInput]
         )
-        console.log(...skills, value)
-        console.log(skills)
         }}>Add</button>
         <button className='button-delete'onClick={() => setSkills(() => {
           skills.pop()

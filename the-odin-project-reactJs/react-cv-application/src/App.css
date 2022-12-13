@@ -40,8 +40,6 @@ a {
 .display-cv {
     height: 80vh;
     width: 30vw;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
     overflow: hidden;
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.3);
@@ -65,7 +63,9 @@ a {
     }
 }
 
-.display-cv>div {}
+.display-cv>div {
+    height: auto;
+}
 
 .create-cv {
     height: 80vh;
@@ -101,6 +101,11 @@ a {
     font-size: 24;
 }
 
+.preview-component {
+    padding-left: 20mm;
+    padding-top: 10mm;
+}
+
 .create-info {
     display: flex;
     flex-direction: column;
@@ -108,7 +113,7 @@ a {
 
 input[type=text] {
     border: none;
-    background: lightgrey;
+    background: white;
     height: 3vh;
     margin: 5px;
     padding-left: 1vh;
@@ -117,7 +122,10 @@ input[type=text] {
 
 .create-title {
     text-align: center;
-    font-size: 24px
+    font-size: 24px;
+    text-decoration: underline;
+    padding: 5px;
+    padding-top: 4mm;
 }
 
 .button-group {
@@ -127,14 +135,14 @@ input[type=text] {
 }
 
 .button-delete {
-    width: 10vw;
+    width: 20mm;
     background-color: rgb(255, 99, 71, 0.9);
     border: none;
     border-radius: 5px;
 }
 
 .button-add {
-    width: 10vw;
+    width: 20mm;
     background-color: rgb(173, 255, 47, 0.9);
     border: none;
     border-radius: 5px;
@@ -150,16 +158,121 @@ input[type=text] {
     cursor: pointer;
 }
 
-.skills-header {
+.cv-display-title {
     padding-left: 2vw;
     color: blue;
     text-decoration: underline;
     font-size: 24px;
 }
 
-li {
+ul {
+    margin-left: 3vw;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    width: 50mm;
+    margin-right: 1vw;
+    margin-top: 3px;
+    padding-left: 0.5vw;
+    border-radius: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.button-add-task {
+    display: flex;
+    text-align: center;
+}
+
+.experience-title {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-duration {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-tasks {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-item {
     padding-left: 2vw;
-    padding-right: 2vw;
+    padding-top: 1vh;
+}
+
+.company-item {
+    font-weight: bold;
+}
+
+.title-item {
+    font-style: italic;
+}
+
+.duration-item {
+    font-size: 0.7em;
+    color: black;
+}
+
+.task-item {
+    font-size: 0.9em;
+    color: black;
+}
+
+.create-skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-skill-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-skill-input>input {
+    width: 25%
+}
+
+.no-list-item {
+    list-style: none;
+    padding-top: 3mm;
+    width: 50mm;
+}
+
+.button-print-reset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 10vh;
+}
+
+.button-print-reset>button {
+    height: 10mm;
+    width: 10mm;
+}
+
+.print-button {
+    background-color: lightgreen;
+    border: none;
+}
+
+.reset-button {
+    background: tomato;
+    border: none;
+}
+
+.wrap {
+    width: 80%;
 }
