@@ -2,13 +2,24 @@ import React from 'react'
 
 function Application() {
   return (
+      <>
+      <h1>Job application form</h1>
+      <h2>Section one</h2>
+      <p>All fields are mandatory</p>
+      <img src="https://via.placeholder.com/150" alt="a person with a laptop" />
+      <span title='close'>X</span>
+      <div data-testid="custom-element">Custom HTML element</div>
     <form>
         <div>
             <label htmlFor="name">Name</label>
-            <input type="text" id='name'/>
+            <input type="text" id='name' placeholder='Fullname' value={"Vishwas"} onChange={() => {}}/>
         </div>
         <div>
-            <label htmlFor="job-location">Job location</label>
+            <label htmlFor="bio">Bio</label>
+            <textarea name="bio" id="bio" />
+        </div>
+        <div>
+            <label htmlFor="job-location">Name</label>
             <select id="job-location">
                 <option value="">Select a country</option>
                 <option value="US">United States</option>
@@ -25,6 +36,7 @@ function Application() {
         </div>
         <button>Submit</button>
     </form>
+    </>
   )
 }
 
