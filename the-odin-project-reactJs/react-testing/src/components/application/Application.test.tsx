@@ -15,8 +15,14 @@ describe("Application", () => {
         })
         expect(sectionHeading).toBeInTheDocument()
 
-        const paragraphElement = screen.getByText("All fields are mandatory")
-        expect(paragraphElement).toBeInTheDocument()
+        const paragraphElementString = screen.getByText("mandatory", {exact:false})
+        expect(paragraphElementString).toBeInTheDocument()
+
+        const paragraphElementRegex = screen.getByText(/mandatory/)
+        expect(paragraphElementRegex).toBeInTheDocument()
+
+        const paragraphElementFunction = screen.getByText((content) => content.includes("mandatory"))
+        expect(paragraphElementFunction).toBeInTheDocument()
 
         const imgElement = screen.getByAltText("a person with a laptop")
         expect(imgElement).toBeInTheDocument()
