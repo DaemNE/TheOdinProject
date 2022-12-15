@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/counter/Counter';
+import { AppProviders } from './components/providers/AppProviders';
+import {MuiMode} from './components/mui/MuiMode'
 
 function App() {
   return ( 
     <div className="App">
-      <Counter />
+      <AppProviders>
+        <div className='App'>
+          <MuiMode />
+        </div>
+      </AppProviders>
     </div>
   );
 }
