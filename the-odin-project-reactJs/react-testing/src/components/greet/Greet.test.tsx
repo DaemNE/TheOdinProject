@@ -9,11 +9,11 @@ import Greet from "./Greet"
 describe('Greet', () => {
     test("Renders correctly", () => {
         render(<Greet />)
-        const textElement = screen.getByText("Hello")
+        const textElement = screen.getByText(/Hello/)
         expect(textElement).toBeInTheDocument()
     })
     
-    describe ("Nested", () => {
+    describe("Nested", () => {
         test('Renders with a name', () => {
             render(<Greet name="Vishwas"/>)
             const textElement = screen.getByText("Hello Vishwas")
