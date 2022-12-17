@@ -1,0 +1,294 @@
+:root {
+    margin: 0;
+    padding: 0;
+    --darkblue: #2b2d42;
+    --lightblue: #8d99ae;
+    --white: #edf2f4;
+    --pink: #ef233c;
+    --red: #d90429;
+}
+
+body {
+    background: linear-gradient(45deg, #2b2d42, #8d99ae);
+    height: auto;
+    font-family: "roboto";
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+a {
+    text-decoration: none;
+    color: #edf2f4;
+}
+
+.nav-bar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: xx-large;
+    width: 80%;
+    height: 90vh;
+}
+
+.about-content,
+.about-title {
+    color: #edf2f4;
+}
+
+.about-content {
+    font-size: xx-large;
+}
+
+.about-title {}
+
+.nav-bar-links {
+    display: flex;
+    gap: 10vw;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    height: 10vh;
+    background-color: black;
+    font-size: 3rem;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+    min-height: 85vh;
+    padding-bottom: 5vh;
+}
+
+.display-cv {
+    height: 80vh;
+    width: 30vw;
+    overflow: hidden;
+    background-color: var(--white);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    position: sticky;
+    color: var(--white);
+}
+
+.display-cv>div {
+    height: auto;
+}
+
+.heading-name {
+    font-size: 48px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.heading-profession {
+    text-align: center;
+    font-weight: 400;
+}
+
+.heading-adress {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: small;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.skills-header {
+    font-size: 24;
+}
+
+.preview-component {
+    padding-left: 20mm;
+    padding-top: 10mm;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cv-display-title {
+    padding-left: 2vw;
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+ul {
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    width: 50mm;
+    margin-top: 3px;
+    padding-left: 0.5vw;
+    border-radius: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-title {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-duration {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-tasks {
+    display: flex;
+    justify-content: center;
+}
+
+.experience-item {
+    padding-left: 2vw;
+    padding-top: 1vh;
+    width: 80%;
+}
+
+.company-item {
+    font-weight: bold;
+}
+
+.title-item {
+    font-style: italic;
+}
+
+.duration-item {
+    font-size: 0.7em;
+}
+
+.task-item {
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.task .create-skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-skill-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-skill-input>input {
+    width: 25%;
+}
+
+.no-list-item {
+    list-style: none;
+    padding-top: 3mm;
+    width: 50mm;
+}
+
+.button-print-reset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 10vh;
+}
+
+.button-print-reset>button {
+    height: 10mm;
+    width: 10mm;
+}
+
+.print-button {
+    background-color: lightgreen;
+    border: none;
+}
+
+.reset-button {
+    background: tomato;
+    border: none;
+}
+
+.wrap {
+    width: 80%;
+}
+
+.about-projects,
+.about-experience,
+.about-skills,
+.about-interests,
+.about-socials,
+.about-github {
+    font-weight: 800;
+    text-decoration: underline;
+    transition: all 500ms;
+    display: inline-block;
+}
+
+.about-projects:hover,
+.about-experience:hover,
+.about-skills:hover,
+.about-interests:hover,
+.about-socials:hover,
+.about-github:hover {
+    color: var(--lightblue);
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+    5% {
+        transform: scale(1.1, 0.9) translateY(0);
+    }
+    16% {
+        transform: scale(0.9, 1.1) translateY(-10px);
+    }
+    25% {
+        transform: scale(1.05, 0.95) translateY(0);
+    }
+    29% {
+        transform: scale(1, 1) translateY(-7px);
+    }
+    32% {
+        transform: scale(1, 1) translateY(0);
+    }
+    50% {
+        transform: scale(1, 1) translateY(0);
+    }
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+.projects {
+    height: 98vh;
+}
