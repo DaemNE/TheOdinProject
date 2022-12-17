@@ -11,8 +11,16 @@ function Projects() {
 
   return (
     <div className="projects">
-      <div>
-        <input type="search" placeholder="Search products.." />
+      <div class="search-container">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search..."
+          class="search-input"
+        />
+        <a href="#" class="search-btn">
+          <i class="fas fa-search"></i>
+        </a>
       </div>
       <nav className="nav-bar-projects">
         <h1>Projects</h1>
@@ -30,6 +38,9 @@ function Projects() {
         </NavLink>
         <NavLink style={navLinkStyles} to={"/projects/react"}>
           React
+        </NavLink>
+        <NavLink style={navLinkStyles} to={"/projects/"}>
+          All
         </NavLink>
       </nav>
     </div>
