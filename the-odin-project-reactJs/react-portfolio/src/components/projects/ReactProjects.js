@@ -1,7 +1,7 @@
 import React from "react";
 
 function ReactProjects() {
-  return <div></div>;
+  return <div>ReactProjects</div>;
 }
 
 export default ReactProjects;

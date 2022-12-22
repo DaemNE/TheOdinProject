@@ -53,4 +53,6 @@ const CVPreviewWrapper = styled.div`
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #edf2f4;
+  opacity: 0;
+  animation: fade 1s ease-in-out forwards;
 `;

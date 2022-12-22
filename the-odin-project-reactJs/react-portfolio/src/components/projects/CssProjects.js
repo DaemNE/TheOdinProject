@@ -1,7 +1,7 @@
 import React from "react";
 
 function CssProjects() {
-  return <div>Css</div>;
+  return <div>CssProjects</div>;
 }
 
 export default CssProjects;
