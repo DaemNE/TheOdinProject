@@ -1,10 +1,10 @@
 import "./App.css";
-import { MuiAccordion } from "./components/MuiAccordion";
+import { MuiImageList } from "./components/MuiImageList";
 
 function App() {
   return (
     <div className="App">
-      <MuiAccordion />
+      <MuiImageList />
     </div>
   );
 }
