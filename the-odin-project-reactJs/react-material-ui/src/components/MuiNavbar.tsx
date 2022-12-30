@@ -23,6 +23,7 @@ export const MuiNavbar = () => {
           <Button color="inherit">Pricing</Button>
           <Button color="inherit">About</Button>
           <Button color="inherit">Login</Button>
+          <Button color="inherit" href="https://www.github.com/daemne">hello</Button>
         </Stack>
       </Toolbar>
     </AppBar>
