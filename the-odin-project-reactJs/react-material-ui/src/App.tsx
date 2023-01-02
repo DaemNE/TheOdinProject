@@ -1,10 +1,10 @@
 import "./App.css";
-import { MuiTabs } from "./components/MuiTabs";
+import { MuiTimeline } from "./components/MuiTimeline";
 
 function App() {
   return (
     <div className="App">
-      <MuiTabs />
+      <MuiTimeline />
     </div>
   );
 }
