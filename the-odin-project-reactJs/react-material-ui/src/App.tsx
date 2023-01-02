@@ -1,11 +1,10 @@
 import "./App.css";
-import { MuiMasonry } from "./components/MuiMasonry";
-import { MuiTimeline } from "./components/MuiTimeline";
+import { MuiResponsiveness } from "./components/MuiResponsiveness";
 
 function App() {
   return (
     <div className="App">
-      <MuiMasonry />
+      <MuiResponsiveness />
     </div>
   );
 }
