@@ -1,10 +1,10 @@
 import "./App.css";
-import { MuiTable } from "./components/MuiTable";
+import { MuiSnackbar } from "./components/MuiSnackbar";
 
 function App() {
   return (
     <div className="App">
-      <MuiTable />
+      <MuiSnackbar />
     </div>
   );
 }
