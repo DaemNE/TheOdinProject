@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { PaletteColorOptions, ThemeOptions } from "@mui/material/styles";
 import React from "react";
 
